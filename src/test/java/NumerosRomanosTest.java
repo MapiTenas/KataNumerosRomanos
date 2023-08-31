@@ -56,4 +56,35 @@ public class NumerosRomanosTest {
 
         assertEquals("IX", new NumerosRomanos().convertir(9));
     }
+
+    @Test
+    void numeroRomanosConversor10() {
+
+        assertEquals("X", new NumerosRomanos().convertir(10));
+    }
+
+    @Test
+    void numeroRomanosConversor50() {
+
+        assertEquals("L", new NumerosRomanos().convertir(50));
+    }
+
+    @Test
+    void numeroRomanosConversor100() {
+
+        assertEquals("C", new NumerosRomanos().convertir(100));
+    }
+
+    @Test
+    void numeroRomanosConversor500() {
+
+        assertEquals("D", new NumerosRomanos().convertir(500));
+    }
+
+    @Test
+    void numeroRomanosConversor1000() {
+
+        assertEquals("M", new NumerosRomanos().convertir(1000));
+    }
+    
 }
