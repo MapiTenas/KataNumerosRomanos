@@ -28,6 +28,10 @@ public class NumerosRomanos {
             numeroRomano = "VI";
         }
 
+        if (numeroArabe == 7) {
+            numeroRomano = "VII";
+        }
+
 
         return numeroRomano;
     }
