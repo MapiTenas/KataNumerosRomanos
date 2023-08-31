@@ -8,6 +8,10 @@ public class NumerosRomanos {
             numeroRomano = "I";
         }
 
+        if (numeroArabe == 2) {
+            numeroRomano = "II";
+        }
+
         return numeroRomano;
     }
 }
