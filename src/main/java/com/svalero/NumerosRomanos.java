@@ -12,6 +12,10 @@ public class NumerosRomanos {
             numeroRomano = "II";
         }
 
+        if (numeroArabe == 3) {
+            numeroRomano = "III";
+        }
+
         return numeroRomano;
     }
 }
