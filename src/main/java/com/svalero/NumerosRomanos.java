@@ -38,6 +38,10 @@ public class NumerosRomanos {
             numeroRomano = "LXX";
         }
 
+        if (numeroArabe == 80) {
+            numeroRomano = "LXXX";
+        }
+
         if (numeroArabe == 100) {
             numeroRomano = "C";
         }
