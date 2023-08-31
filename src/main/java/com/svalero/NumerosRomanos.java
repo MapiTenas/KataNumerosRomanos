@@ -16,6 +16,9 @@ public class NumerosRomanos {
             numeroRomano = "III";
         }
 
+        if (numeroArabe == 4) {
+            numeroRomano = "IV";
+        }
         return numeroRomano;
     }
 }
