@@ -70,6 +70,12 @@ public class NumerosRomanosTest {
     }
 
     @Test
+    void numeroRomanosConversor30() {
+
+        assertEquals("XXX", new NumerosRomanos().convertir(30));
+    }
+
+    @Test
     void numeroRomanosConversor50() {
 
         assertEquals("L", new NumerosRomanos().convertir(50));
