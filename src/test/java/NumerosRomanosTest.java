@@ -14,4 +14,10 @@ public class NumerosRomanosTest {
 
         assertEquals("II", new NumerosRomanos().convertir(2));
     }
+
+    @Test
+    void numeroRomanosConversor3() {
+
+        assertEquals("III", new NumerosRomanos().convertir(3));
+    }
 }
