@@ -24,6 +24,10 @@ public class NumerosRomanos {
             numeroRomano = "V";
         }
 
+        if (numeroArabe == 6) {
+            numeroRomano = "VI";
+        }
+
 
         return numeroRomano;
     }
