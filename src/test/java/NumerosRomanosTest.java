@@ -107,6 +107,12 @@ public class NumerosRomanosTest {
     }
 
     @Test
+    void numeroRomanosConversor90() {
+
+        assertEquals("XC", new NumerosRomanos().convertir(90));
+    }
+
+    @Test
     void numeroRomanosConversor100() {
 
         assertEquals("C", new NumerosRomanos().convertir(100));
