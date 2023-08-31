@@ -18,6 +18,10 @@ public class NumerosRomanos {
             numeroRomano = "XX";
         }
 
+        if (numeroArabe == 30) {
+            numeroRomano = "XXX";
+        }
+
         if (numeroArabe == 50) {
             numeroRomano = "L";
         }
