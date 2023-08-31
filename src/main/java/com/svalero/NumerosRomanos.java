@@ -3,41 +3,11 @@ package com.svalero;
 public class NumerosRomanos {
     public static String convertir (int numeroArabe) {
         String numeroRomano = null;
+        String unidadesRomanas;
 
-        if (numeroArabe == 1) {
-            numeroRomano = "I";
-        }
-
-        if (numeroArabe == 2) {
-            numeroRomano = "II";
-        }
-
-        if (numeroArabe == 3) {
-            numeroRomano = "III";
-        }
-
-        if (numeroArabe == 4) {
-            numeroRomano = "IV";
-        }
-
-        if (numeroArabe == 5) {
-            numeroRomano = "V";
-        }
-
-        if (numeroArabe == 6) {
-            numeroRomano = "VI";
-        }
-
-        if (numeroArabe == 7) {
-            numeroRomano = "VII";
-        }
-
-        if (numeroArabe == 8) {
-            numeroRomano = "VIII";
-        }
-
-        if (numeroArabe == 9) {
-            numeroRomano = "IX";
+        if (numeroArabe <=10) {
+            unidadesRomanas = unidadesConversion(numeroArabe);
+            numeroRomano = unidadesRomanas;
         }
 
         if (numeroArabe == 10) {
@@ -60,8 +30,32 @@ public class NumerosRomanos {
             numeroRomano = "M";
         }
 
-
-
         return numeroRomano;
     }
+    private static String unidadesConversion(int unidades) {
+        String unidadesRomanas;
+        if (unidades == 1) {
+            unidadesRomanas = "I";
+        } else if (unidades == 2) {
+            unidadesRomanas = "II";
+        } else if (unidades == 3) {
+            unidadesRomanas = "III";
+        } else if (unidades == 4) {
+            unidadesRomanas = "IV";
+        } else if (unidades == 5) {
+            unidadesRomanas = "V";
+        } else if (unidades == 6) {
+            unidadesRomanas = "VI";
+        } else if (unidades == 7) {
+            unidadesRomanas = "VII";
+        } else if (unidades == 8) {
+            unidadesRomanas = "VIII";
+        } else {
+            unidadesRomanas = "IX";
+        }
+        return unidadesRomanas;
+    }
+
+
+
 }
