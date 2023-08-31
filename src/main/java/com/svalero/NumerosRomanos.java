@@ -40,6 +40,25 @@ public class NumerosRomanos {
             numeroRomano = "IX";
         }
 
+        if (numeroArabe == 10) {
+            numeroRomano = "X";
+        }
+
+        if (numeroArabe == 50) {
+            numeroRomano = "L";
+        }
+
+        if (numeroArabe == 100) {
+            numeroRomano = "C";
+        }
+
+        if (numeroArabe == 500) {
+            numeroRomano = "D";
+        }
+
+        if (numeroArabe == 1000) {
+            numeroRomano = "M";
+        }
 
 
 
