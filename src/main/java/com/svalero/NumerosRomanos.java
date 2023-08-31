@@ -19,6 +19,12 @@ public class NumerosRomanos {
         if (numeroArabe == 4) {
             numeroRomano = "IV";
         }
+
+        if (numeroArabe == 5) {
+            numeroRomano = "V";
+        }
+
+
         return numeroRomano;
     }
 }
