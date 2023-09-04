@@ -5,6 +5,7 @@ public class NumerosRomanos {
         String numeroRomano = null;
         String unidadesRomanas;
         String decenasRomanas;
+        String centenasRomanas;
 
         if (numeroArabe < 10) {
             unidadesRomanas = unidadesConversion(numeroArabe);
@@ -13,43 +14,11 @@ public class NumerosRomanos {
             decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
             unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
             numeroRomano = decenasRomanas + unidadesRomanas;
-        }
-
-        if (numeroArabe == 100) {
-            numeroRomano = "C";
-        }
-
-        if (numeroArabe == 200) {
-            numeroRomano = "CC";
-        }
-
-
-        if (numeroArabe == 300) {
-            numeroRomano = "CCC";
-        }
-
-        if (numeroArabe == 400) {
-            numeroRomano = "CD";
-        }
-
-        if (numeroArabe == 500) {
-            numeroRomano = "D";
-        }
-
-        if (numeroArabe == 600) {
-            numeroRomano = "DC";
-        }
-
-        if (numeroArabe == 700) {
-            numeroRomano = "DCC";
-        }
-
-        if (numeroArabe == 800) {
-            numeroRomano = "DCCC";
-        }
-
-        if (numeroArabe == 900) {
-            numeroRomano = "CM";
+        } else if (numeroArabe < 1000) {
+            centenasRomanas = centenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
+            decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
+            unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(2))));
+            numeroRomano = centenasRomanas + decenasRomanas + unidadesRomanas;
         }
 
         if (numeroArabe == 1000) {
@@ -77,7 +46,7 @@ public class NumerosRomanos {
             unidadesRomanas = "VII";
         } else if (unidades == 8) {
             unidadesRomanas = "VIII";
-        } else if (unidades == 9){
+        } else if (unidades == 9) {
             unidadesRomanas = "IX";
         }
         return unidadesRomanas;
@@ -105,5 +74,31 @@ public class NumerosRomanos {
             decenasRomanas = "XC";
         }
         return decenasRomanas;
+    }
+
+    private static String centenasConversion(int centenas) {
+        String centenasRomanas = "";
+        if (centenas == 1) {
+            centenasRomanas = "C";
+        } else if (centenas == 2) {
+            centenasRomanas = "CC";
+        } else if (centenas == 3) {
+            centenasRomanas = "CCC";
+        } else if (centenas == 4) {
+            centenasRomanas = "CD";
+        } else if (centenas == 5) {
+            centenasRomanas = "D";
+        } else if (centenas == 6) {
+            centenasRomanas = "DC";
+        } else if (centenas == 7) {
+            centenasRomanas = "DCC";
+        } else if (centenas == 8) {
+            centenasRomanas = "DCCC";
+        } else if (centenas == 9) {
+            centenasRomanas = "CM";
+        }
+
+        return centenasRomanas;
+
     }
 }
