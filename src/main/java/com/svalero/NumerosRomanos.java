@@ -19,6 +19,10 @@ public class NumerosRomanos {
             numeroRomano = "C";
         }
 
+        if (numeroArabe == 200) {
+            numeroRomano = "CC";
+        }
+
         if (numeroArabe == 500) {
             numeroRomano = "D";
         }
