@@ -1,49 +1,18 @@
 package com.svalero;
 
 public class NumerosRomanos {
-    public static String convertir (int numeroArabe) {
+    public static String convertir(int numeroArabe) {
         String numeroRomano = null;
         String unidadesRomanas;
+        String decenasRomanas;
 
-        if (numeroArabe <=10) {
+        if (numeroArabe < 10) {
             unidadesRomanas = unidadesConversion(numeroArabe);
             numeroRomano = unidadesRomanas;
-        }
-
-        if (numeroArabe == 10) {
-            numeroRomano = "X";
-        }
-
-        if (numeroArabe == 20) {
-            numeroRomano = "XX";
-        }
-
-        if (numeroArabe == 30) {
-            numeroRomano = "XXX";
-        }
-
-        if (numeroArabe == 40) {
-            numeroRomano = "XL";
-        }
-
-        if (numeroArabe == 50) {
-            numeroRomano = "L";
-        }
-
-        if (numeroArabe == 60) {
-            numeroRomano = "LX";
-        }
-
-        if (numeroArabe == 70) {
-            numeroRomano = "LXX";
-        }
-
-        if (numeroArabe == 80) {
-            numeroRomano = "LXXX";
-        }
-
-        if (numeroArabe == 90) {
-            numeroRomano = "XC";
+        } else if (numeroArabe < 100) {
+            decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
+            unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
+            numeroRomano = decenasRomanas + unidadesRomanas;
         }
 
         if (numeroArabe == 100) {
@@ -60,8 +29,9 @@ public class NumerosRomanos {
 
         return numeroRomano;
     }
+
     private static String unidadesConversion(int unidades) {
-        String unidadesRomanas;
+        String unidadesRomanas = "";
         if (unidades == 1) {
             unidadesRomanas = "I";
         } else if (unidades == 2) {
@@ -78,12 +48,33 @@ public class NumerosRomanos {
             unidadesRomanas = "VII";
         } else if (unidades == 8) {
             unidadesRomanas = "VIII";
-        } else {
+        } else if (unidades == 9){
             unidadesRomanas = "IX";
         }
         return unidadesRomanas;
     }
 
-
-
+    private static String decenasConversion(int decenas) {
+        String decenasRomanas = "";
+        if (decenas == 1) {
+            decenasRomanas = "X";
+        } else if (decenas == 2) {
+            decenasRomanas = "XX";
+        } else if (decenas == 3) {
+            decenasRomanas = "XXX";
+        } else if (decenas == 4) {
+            decenasRomanas = "XL";
+        } else if (decenas == 5) {
+            decenasRomanas = "L";
+        } else if (decenas == 6) {
+            decenasRomanas = "LX";
+        } else if (decenas == 7) {
+            decenasRomanas = "LXX";
+        } else if (decenas == 8) {
+            decenasRomanas = "LXXX";
+        } else if (decenas == 9) {
+            decenasRomanas = "XC";
+        }
+        return decenasRomanas;
+    }
 }
