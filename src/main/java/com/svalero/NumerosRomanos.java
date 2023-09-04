@@ -40,6 +40,10 @@ public class NumerosRomanos {
             numeroRomano = "DC";
         }
 
+        if (numeroArabe == 700) {
+            numeroRomano = "DCC";
+        }
+
         if (numeroArabe == 1000) {
             numeroRomano = "M";
         }
