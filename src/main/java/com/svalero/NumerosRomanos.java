@@ -29,6 +29,10 @@ public class NumerosRomanos {
             numeroRomano = "MM";
         }
 
+        if (numeroArabe == 3000) {
+            numeroRomano = "MMM";
+        }
+
         return numeroRomano;
     }
 
