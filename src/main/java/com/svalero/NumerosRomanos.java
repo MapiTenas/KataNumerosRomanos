@@ -28,6 +28,10 @@ public class NumerosRomanos {
             numeroRomano = "CCC";
         }
 
+        if (numeroArabe == 400) {
+            numeroRomano = "CD";
+        }
+
         if (numeroArabe == 500) {
             numeroRomano = "D";
         }

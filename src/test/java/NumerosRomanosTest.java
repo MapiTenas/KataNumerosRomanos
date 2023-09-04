@@ -133,7 +133,7 @@ public class NumerosRomanosTest {
     @Test
     void numeroRomanosConversor400() {
 
-        assertEquals("CD", new NumerosRomanos().convertir(300));
+        assertEquals("CD", new NumerosRomanos().convertir(400));
     }
 
     @Test
