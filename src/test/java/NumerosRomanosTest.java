@@ -172,4 +172,10 @@ public class NumerosRomanosTest {
         assertEquals("M", new NumerosRomanos().convertir(1000));
     }
 
+    @Test
+    void numeroRomanosConversor2000() {
+
+        assertEquals("MM", new NumerosRomanos().convertir(2000));
+    }
+
 }
