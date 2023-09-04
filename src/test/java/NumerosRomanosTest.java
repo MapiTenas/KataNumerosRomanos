@@ -119,6 +119,12 @@ public class NumerosRomanosTest {
     }
 
     @Test
+    void numeroRomanosConversor200() {
+
+        assertEquals("CC", new NumerosRomanos().convertir(200));
+    }
+
+    @Test
     void numeroRomanosConversor500() {
 
         assertEquals("D", new NumerosRomanos().convertir(500));
