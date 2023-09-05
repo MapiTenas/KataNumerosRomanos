@@ -2,6 +2,7 @@ package com.svalero;
 
 public class NumerosRomanos {
 
+    private final static int CERO = 0;
     private final static int UNO = 1;
     private final static int DOS = 2;
     private final static int TRES = 3;
@@ -26,22 +27,27 @@ public class NumerosRomanos {
             unidadesRomanas = unidadesConversion(numeroArabe);
             numeroRomano = unidadesRomanas;
         } else if (numeroArabe < CIEN) {
-            decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
-            unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,CERO));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,UNO));
             numeroRomano = decenasRomanas + unidadesRomanas;
         } else if (numeroArabe < MIL) {
-            centenasRomanas = centenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
-            decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
-            unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(2))));
+            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe,CERO));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,UNO));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,DOS));
             numeroRomano = centenasRomanas + decenasRomanas + unidadesRomanas;
         } else {
-            millaresRomanos = millaresConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
-            centenasRomanas = centenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
-            decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(2))));
-            unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(3))));
+            millaresRomanos = millaresConversion(getNumeroConversion(numeroArabe,CERO));
+            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe,UNO));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,DOS));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,TRES));
             numeroRomano = millaresRomanos + centenasRomanas + decenasRomanas + unidadesRomanas;
         }
             return numeroRomano;
+        }
+
+        private static int getNumeroConversion (int numero, int posicion) {
+            int res = Integer.parseInt(String.valueOf(String.valueOf(numero).charAt(posicion)));
+            return res;
         }
 
         private static String unidadesConversion ( int unidades){
