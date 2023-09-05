@@ -2,18 +2,18 @@ package com.svalero;
 
 public class NumerosRomanos {
 
-    final static int uno = 1;
-    final static int dos = 2;
-    final static int tres = 3;
-    final static int cuatro = 4;
-    final static int cinco = 5;
-    final static int seis = 6;
-    final static int siete = 7;
-    final static int ocho = 8;
-    final static int nueve = 9;
-    final static int diez = 10;
-    final static int cien = 100;
-    final static int mil = 1000;
+    private final static int UNO = 1;
+    private final static int DOS = 2;
+    private final static int TRES = 3;
+    private final static int CUATRO = 4;
+    private final static int CINCO = 5;
+    private final static int SEIS = 6;
+    private final static int SIETE = 7;
+    private final static int OCHO = 8;
+    private final static int NUEVE = 9;
+    private final static int DIEZ = 10;
+    private final static int CIEN = 100;
+    private final static int MIL = 1000;
 
     public static String convertir(int numeroArabe) {
         String numeroRomano = null;
@@ -22,14 +22,14 @@ public class NumerosRomanos {
         String centenasRomanas;
         String millaresRomanos;
 
-        if (numeroArabe < diez) {
+        if (numeroArabe < DIEZ) {
             unidadesRomanas = unidadesConversion(numeroArabe);
             numeroRomano = unidadesRomanas;
-        } else if (numeroArabe < cien) {
+        } else if (numeroArabe < CIEN) {
             decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
             unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
             numeroRomano = decenasRomanas + unidadesRomanas;
-        } else if (numeroArabe < mil) {
+        } else if (numeroArabe < MIL) {
             centenasRomanas = centenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
             decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
             unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(2))));
@@ -46,23 +46,23 @@ public class NumerosRomanos {
 
         private static String unidadesConversion ( int unidades){
             String unidadesRomanas = "";
-            if (unidades == uno) {
+            if (unidades == UNO) {
                 unidadesRomanas = "I";
-            } else if (unidades == dos) {
+            } else if (unidades == DOS) {
                 unidadesRomanas = "II";
-            } else if (unidades == tres) {
+            } else if (unidades == TRES) {
                 unidadesRomanas = "III";
-            } else if (unidades == cuatro) {
+            } else if (unidades == CUATRO) {
                 unidadesRomanas = "IV";
-            } else if (unidades == cinco) {
+            } else if (unidades == CINCO) {
                 unidadesRomanas = "V";
-            } else if (unidades == seis) {
+            } else if (unidades == SEIS) {
                 unidadesRomanas = "VI";
-            } else if (unidades == siete) {
+            } else if (unidades == SIETE) {
                 unidadesRomanas = "VII";
-            } else if (unidades == ocho) {
+            } else if (unidades == OCHO) {
                 unidadesRomanas = "VIII";
-            } else if (unidades == nueve) {
+            } else if (unidades == NUEVE) {
                 unidadesRomanas = "IX";
             }
             return unidadesRomanas;
@@ -70,23 +70,23 @@ public class NumerosRomanos {
 
         private static String decenasConversion ( int decenas){
             String decenasRomanas = "";
-            if (decenas == 1) {
+            if (decenas == UNO) {
                 decenasRomanas = "X";
-            } else if (decenas == 2) {
+            } else if (decenas == DOS) {
                 decenasRomanas = "XX";
-            } else if (decenas == 3) {
+            } else if (decenas == TRES) {
                 decenasRomanas = "XXX";
-            } else if (decenas == 4) {
+            } else if (decenas == CUATRO) {
                 decenasRomanas = "XL";
-            } else if (decenas == 5) {
+            } else if (decenas == CINCO) {
                 decenasRomanas = "L";
-            } else if (decenas == 6) {
+            } else if (decenas == SEIS) {
                 decenasRomanas = "LX";
-            } else if (decenas == 7) {
+            } else if (decenas == SIETE) {
                 decenasRomanas = "LXX";
-            } else if (decenas == 8) {
+            } else if (decenas == OCHO) {
                 decenasRomanas = "LXXX";
-            } else if (decenas == 9) {
+            } else if (decenas == NUEVE) {
                 decenasRomanas = "XC";
             }
             return decenasRomanas;
@@ -94,23 +94,23 @@ public class NumerosRomanos {
 
         private static String centenasConversion ( int centenas){
             String centenasRomanas = "";
-            if (centenas == 1) {
+            if (centenas == UNO) {
                 centenasRomanas = "C";
-            } else if (centenas == 2) {
+            } else if (centenas == DOS) {
                 centenasRomanas = "CC";
-            } else if (centenas == 3) {
+            } else if (centenas == TRES) {
                 centenasRomanas = "CCC";
-            } else if (centenas == 4) {
+            } else if (centenas == CUATRO) {
                 centenasRomanas = "CD";
-            } else if (centenas == 5) {
+            } else if (centenas == CINCO) {
                 centenasRomanas = "D";
-            } else if (centenas == 6) {
+            } else if (centenas == SEIS) {
                 centenasRomanas = "DC";
-            } else if (centenas == 7) {
+            } else if (centenas == SIETE) {
                 centenasRomanas = "DCC";
-            } else if (centenas == 8) {
+            } else if (centenas == OCHO) {
                 centenasRomanas = "DCCC";
-            } else if (centenas == 9) {
+            } else if (centenas == NUEVE) {
                 centenasRomanas = "CM";
             }
 
@@ -119,11 +119,11 @@ public class NumerosRomanos {
         }
         private static String millaresConversion(int millares) {
             String millaresRomanos = "";
-            if (millares == 1) {
+            if (millares == UNO) {
                 millaresRomanos = "M";
-            } else if (millares == 2) {
+            } else if (millares == DOS) {
                 millaresRomanos = "MM";
-            } else {
+            } else if (millares == TRES){
                 millaresRomanos = "MMM";
             }
 
