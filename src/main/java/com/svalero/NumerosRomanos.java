@@ -1,19 +1,40 @@
 package com.svalero;
 
 public class NumerosRomanos {
-    /** Variables usadas por el programa */
+
+    private NumerosRomanos() { }
+    /**
+     * @return una nueva instancia de la clase NumerosRomanos.
+     */
+    public static NumerosRomanos getInstance() {
+        return NumerosRomanos.getInstance();
+    }
+
+    /** Variable usada por el programa. */
     private static final int CERO = 0;
+    /** Variable usada por el programa. */
     private static final int UNO = 1;
+    /** Variable usada por el programa. */
     private static final int DOS = 2;
+    /** Variable usada por el programa. */
     private static final int TRES = 3;
+    /** Variable usada por el programa. */
     private static final int CUATRO = 4;
+    /** Variable usada por el programa. */
     private static final int CINCO = 5;
+    /** Variable usada por el programa. */
     private static final int SEIS = 6;
+    /** Variable usada por el programa. */
     private static final int SIETE = 7;
+    /** Variable usada por el programa. */
     private static final int OCHO = 8;
+    /** Variable usada por el programa. */
     private static final int NUEVE = 9;
+    /** Variable usada por el programa. */
     private static final int DIEZ = 10;
+    /** Variable usada por el programa. */
     private static final int CIEN = 100;
+    /** Variable usada por el programa. */
     private static final int MIL = 1000;
 
     public static String convertir(final int numeroArabe) {
