@@ -27,30 +27,30 @@ public class NumerosRomanos {
             unidadesRomanas = unidadesConversion(numeroArabe);
             numeroRomano = unidadesRomanas;
         } else if (numeroArabe < CIEN) {
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,CERO));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,UNO));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, CERO));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, UNO));
             numeroRomano = decenasRomanas + unidadesRomanas;
         } else if (numeroArabe < MIL) {
-            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe,CERO));
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,UNO));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,DOS));
+            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe, CERO));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, UNO));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, DOS));
             numeroRomano = centenasRomanas + decenasRomanas + unidadesRomanas;
         } else {
-            millaresRomanos = millaresConversion(getNumeroConversion(numeroArabe,CERO));
-            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe,UNO));
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe,DOS));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe,TRES));
+            millaresRomanos = millaresConversion(getNumeroConversion(numeroArabe, CERO));
+            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe, UNO));
+            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, DOS));
+            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, TRES));
             numeroRomano = millaresRomanos + centenasRomanas + decenasRomanas + unidadesRomanas;
         }
             return numeroRomano;
         }
 
-        private static int getNumeroConversion (int numero, int posicion) {
+        private static int getNumeroConversion(final int numero, final int posicion) {
             int res = Integer.parseInt(String.valueOf(String.valueOf(numero).charAt(posicion)));
             return res;
         }
 
-        private static String unidadesConversion ( int unidades){
+        private static String unidadesConversion(final int unidades) {
             String unidadesRomanas = "";
             if (unidades == UNO) {
                 unidadesRomanas = "I";
@@ -74,7 +74,7 @@ public class NumerosRomanos {
             return unidadesRomanas;
         }
 
-        private static String decenasConversion ( int decenas){
+        private static String decenasConversion(final int decenas) {
             String decenasRomanas = "";
             if (decenas == UNO) {
                 decenasRomanas = "X";
@@ -98,7 +98,7 @@ public class NumerosRomanos {
             return decenasRomanas;
         }
 
-        private static String centenasConversion ( int centenas){
+        private static String centenasConversion(final int centenas) {
             String centenasRomanas = "";
             if (centenas == UNO) {
                 centenasRomanas = "C";
@@ -123,13 +123,13 @@ public class NumerosRomanos {
             return centenasRomanas;
 
         }
-        private static String millaresConversion(int millares) {
+        private static String millaresConversion(final int millares) {
             String millaresRomanos = "";
             if (millares == UNO) {
                 millaresRomanos = "M";
             } else if (millares == DOS) {
                 millaresRomanos = "MM";
-            } else if (millares == TRES){
+            } else if (millares == TRES) {
                 millaresRomanos = "MMM";
             }
 
