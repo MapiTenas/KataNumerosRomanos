@@ -1,6 +1,20 @@
 package com.svalero;
 
 public class NumerosRomanos {
+
+    final static int uno = 1;
+    final static int dos = 2;
+    final static int tres = 3;
+    final static int cuatro = 4;
+    final static int cinco = 5;
+    final static int seis = 6;
+    final static int siete = 7;
+    final static int ocho = 8;
+    final static int nueve = 9;
+    final static int diez = 10;
+    final static int cien = 100;
+    final static int mil = 1000;
+
     public static String convertir(int numeroArabe) {
         String numeroRomano = null;
         String unidadesRomanas;
@@ -8,14 +22,14 @@ public class NumerosRomanos {
         String centenasRomanas;
         String millaresRomanos;
 
-        if (numeroArabe < 10) {
+        if (numeroArabe < diez) {
             unidadesRomanas = unidadesConversion(numeroArabe);
             numeroRomano = unidadesRomanas;
-        } else if (numeroArabe < 100) {
+        } else if (numeroArabe < cien) {
             decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
             unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
             numeroRomano = decenasRomanas + unidadesRomanas;
-        } else if (numeroArabe < 1000) {
+        } else if (numeroArabe < mil) {
             centenasRomanas = centenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(0))));
             decenasRomanas = decenasConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(1))));
             unidadesRomanas = unidadesConversion(Integer.parseInt(String.valueOf(String.valueOf(numeroArabe).charAt(2))));
@@ -32,23 +46,23 @@ public class NumerosRomanos {
 
         private static String unidadesConversion ( int unidades){
             String unidadesRomanas = "";
-            if (unidades == 1) {
+            if (unidades == uno) {
                 unidadesRomanas = "I";
-            } else if (unidades == 2) {
+            } else if (unidades == dos) {
                 unidadesRomanas = "II";
-            } else if (unidades == 3) {
+            } else if (unidades == tres) {
                 unidadesRomanas = "III";
-            } else if (unidades == 4) {
+            } else if (unidades == cuatro) {
                 unidadesRomanas = "IV";
-            } else if (unidades == 5) {
+            } else if (unidades == cinco) {
                 unidadesRomanas = "V";
-            } else if (unidades == 6) {
+            } else if (unidades == seis) {
                 unidadesRomanas = "VI";
-            } else if (unidades == 7) {
+            } else if (unidades == siete) {
                 unidadesRomanas = "VII";
-            } else if (unidades == 8) {
+            } else if (unidades == ocho) {
                 unidadesRomanas = "VIII";
-            } else if (unidades == 9) {
+            } else if (unidades == nueve) {
                 unidadesRomanas = "IX";
             }
             return unidadesRomanas;
