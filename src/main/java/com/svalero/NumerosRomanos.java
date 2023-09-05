@@ -1,6 +1,6 @@
 package com.svalero;
 
-public class NumerosRomanos {
+public final class NumerosRomanos {
 
     private NumerosRomanos() { }
     /**
@@ -37,6 +37,7 @@ public class NumerosRomanos {
     /** Variable usada por el programa. */
     private static final int MIL = 1000;
 
+    /** Método de conversión de números arabes a números romanos. */
     public static String convertir(final int numeroArabe) {
         String numeroRomano = null;
         String unidades;
