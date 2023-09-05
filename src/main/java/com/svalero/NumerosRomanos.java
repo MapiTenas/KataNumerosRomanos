@@ -1,52 +1,53 @@
 package com.svalero;
 
 public class NumerosRomanos {
+    /** Variables usadas por el programa */
+    private static final int CERO = 0;
+    private static final int UNO = 1;
+    private static final int DOS = 2;
+    private static final int TRES = 3;
+    private static final int CUATRO = 4;
+    private static final int CINCO = 5;
+    private static final int SEIS = 6;
+    private static final int SIETE = 7;
+    private static final int OCHO = 8;
+    private static final int NUEVE = 9;
+    private static final int DIEZ = 10;
+    private static final int CIEN = 100;
+    private static final int MIL = 1000;
 
-    private final static int CERO = 0;
-    private final static int UNO = 1;
-    private final static int DOS = 2;
-    private final static int TRES = 3;
-    private final static int CUATRO = 4;
-    private final static int CINCO = 5;
-    private final static int SEIS = 6;
-    private final static int SIETE = 7;
-    private final static int OCHO = 8;
-    private final static int NUEVE = 9;
-    private final static int DIEZ = 10;
-    private final static int CIEN = 100;
-    private final static int MIL = 1000;
-
-    public static String convertir(int numeroArabe) {
+    public static String convertir(final int numeroArabe) {
         String numeroRomano = null;
-        String unidadesRomanas;
-        String decenasRomanas;
-        String centenasRomanas;
-        String millaresRomanos;
+        String unidades;
+        String decenas;
+        String centenas;
+        String millares;
 
         if (numeroArabe < DIEZ) {
-            unidadesRomanas = unidadesConversion(numeroArabe);
-            numeroRomano = unidadesRomanas;
+            unidades = unidadesConversion(numeroArabe);
+            numeroRomano = unidades;
         } else if (numeroArabe < CIEN) {
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, CERO));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, UNO));
-            numeroRomano = decenasRomanas + unidadesRomanas;
+            decenas = decenasConversion(getNumero(numeroArabe, CERO));
+            unidades = unidadesConversion(getNumero(numeroArabe, UNO));
+            numeroRomano = decenas + unidades;
         } else if (numeroArabe < MIL) {
-            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe, CERO));
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, UNO));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, DOS));
-            numeroRomano = centenasRomanas + decenasRomanas + unidadesRomanas;
+            centenas = centenasConversion(getNumero(numeroArabe, CERO));
+            decenas = decenasConversion(getNumero(numeroArabe, UNO));
+            unidades = unidadesConversion(getNumero(numeroArabe, DOS));
+            numeroRomano = centenas + decenas + unidades;
         } else {
-            millaresRomanos = millaresConversion(getNumeroConversion(numeroArabe, CERO));
-            centenasRomanas = centenasConversion(getNumeroConversion(numeroArabe, UNO));
-            decenasRomanas = decenasConversion(getNumeroConversion(numeroArabe, DOS));
-            unidadesRomanas = unidadesConversion(getNumeroConversion(numeroArabe, TRES));
-            numeroRomano = millaresRomanos + centenasRomanas + decenasRomanas + unidadesRomanas;
+            millares = millaresConversion(getNumero(numeroArabe, CERO));
+            centenas = centenasConversion(getNumero(numeroArabe, UNO));
+            decenas = decenasConversion(getNumero(numeroArabe, DOS));
+            unidades = unidadesConversion(getNumero(numeroArabe, TRES));
+            numeroRomano = millares + centenas + decenas + unidades;
         }
             return numeroRomano;
         }
 
-        private static int getNumeroConversion(final int numero, final int posicion) {
-            int res = Integer.parseInt(String.valueOf(String.valueOf(numero).charAt(posicion)));
+        private static int getNumero(final int numero, final int posicion) {
+            char numeroChar = String.valueOf(numero).charAt(posicion);
+            int res = Integer.parseInt(String.valueOf(numeroChar));
             return res;
         }
 
