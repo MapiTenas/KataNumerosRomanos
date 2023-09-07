@@ -3,9 +3,16 @@ import java.util.Map;
 
 public final class NumerosRomanos {
 
+    private NumerosRomanos() { }
+    /**
+     * @return una nueva instancia de la clase NumerosRomanos.
+     */
+    public static NumerosRomanos getInstance() {
+        return new NumerosRomanos();
+    }
     /** Mapa que contiene el valor de las unidades. */
-    private static final Map<String, String> unidad = Map.of(
-            "0","",
+    private static final Map<String, String> UNIDAD = Map.of(
+            "0", "",
             "1", "I",
             "2", "II",
             "3", "III",
@@ -18,8 +25,8 @@ public final class NumerosRomanos {
     );
 
     /** Mapa que contiene el valor de las decenas. */
-    private static final Map<String, String> decena = Map.of(
-            "0","",
+    private static final Map<String, String> DECENA = Map.of(
+            "0", "",
             "1", "X",
             "2", "XX",
             "3", "XXX",
@@ -32,8 +39,8 @@ public final class NumerosRomanos {
     );
 
     /** Mapa que contiene el valor de las centenas. */
-    private static final Map<String, String> centena = Map.of(
-            "0","",
+    private static final Map<String, String> CENTENA = Map.of(
+            "0", "",
             "1", "C",
             "2", "CC",
             "3", "CCC",
@@ -46,7 +53,7 @@ public final class NumerosRomanos {
     );
 
     /** Mapa que contiene el valor de los millares. */
-    private static final Map<String, String> millar = Map.of(
+    private static final Map<String, String> MILLAR = Map.of(
             "1", "M",
             "2", "MM",
             "3", "MMM"
@@ -68,7 +75,10 @@ public final class NumerosRomanos {
     /** Variable utilizada para identificar numeros menores que mil. */
     private static final int MIL = 1000;
 
-    /** Método de conversión de números arabes a números romanos. */
+    /** Método de conversión de números arabes a números romanos.
+     * @param numeroArabe numero a convertir
+     * @return resultado de la conversion a numero romano
+     * */
     public static String convertir(final int numeroArabe) {
         String numeroRomano;
         String unidades;
@@ -77,22 +87,22 @@ public final class NumerosRomanos {
         String millares;
 
         if (numeroArabe < DIEZ) {
-            unidades = unidad.get(String.valueOf(numeroArabe));
+            unidades = UNIDAD.get(String.valueOf(numeroArabe));
             numeroRomano = unidades;
         } else if (numeroArabe < CIEN) {
-            decenas = decena.get(String.valueOf(getNumero(numeroArabe, CERO)));
-            unidades = unidad.get(String.valueOf(getNumero(numeroArabe, UNO)));
+            decenas = DECENA.get(String.valueOf(getNumero(numeroArabe, CERO)));
+            unidades = UNIDAD.get(String.valueOf(getNumero(numeroArabe, UNO)));
             numeroRomano = decenas + unidades;
         } else if (numeroArabe < MIL) {
-            centenas = centena.get(String.valueOf(getNumero(numeroArabe, CERO)));
-            decenas = decena.get(String.valueOf(getNumero(numeroArabe, UNO)));
-            unidades = unidad.get(String.valueOf(getNumero(numeroArabe, DOS)));
+            centenas = CENTENA.get(String.valueOf(getNumero(numeroArabe, CERO)));
+            decenas = DECENA.get(String.valueOf(getNumero(numeroArabe, UNO)));
+            unidades = UNIDAD.get(String.valueOf(getNumero(numeroArabe, DOS)));
             numeroRomano = centenas + decenas + unidades;
         } else {
-            millares = millar.get(String.valueOf(getNumero(numeroArabe, CERO)));
-            centenas = centena.get(String.valueOf(getNumero(numeroArabe, UNO)));
-            decenas = decena.get(String.valueOf(getNumero(numeroArabe, DOS)));
-            unidades = unidad.get(String.valueOf(getNumero(numeroArabe, TRES)));
+            millares = MILLAR.get(String.valueOf(getNumero(numeroArabe, CERO)));
+            centenas = CENTENA.get(String.valueOf(getNumero(numeroArabe, UNO)));
+            decenas = DECENA.get(String.valueOf(getNumero(numeroArabe, DOS)));
+            unidades = UNIDAD.get(String.valueOf(getNumero(numeroArabe, TRES)));
             numeroRomano = millares + centenas + decenas + unidades;
         }
             return numeroRomano;
@@ -103,6 +113,4 @@ public final class NumerosRomanos {
             return Integer.parseInt(String.valueOf(numeroChar));
         }
 
-
 }
-
