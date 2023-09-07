@@ -9,10 +9,16 @@ public final class Main {
      */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Introduce un número para convertirlo "
-                + "a numeración romana:");
-        int numeroArabe = keyboard.nextInt();
-        System.out.println(NumerosRomanos.convertir(numeroArabe));
-
+        int numeroArabe;
+        do {
+            System.out.print("Introduce un número para convertirlo "
+                    + "a numeración romana:");
+            numeroArabe = keyboard.nextInt();
+            if (numeroArabe > 3000) {
+                System.out.println("Número erroneo.");
+            } else {
+                System.out.println(NumerosRomanos.convertir(numeroArabe));
+            }
+        } while (numeroArabe <= 3000);
     }
 }
