@@ -94,7 +94,9 @@ public final class NumerosRomanos {
             unidades = UNIDAD.get(String.valueOf(getNumero(numeroArabe, UNO)));
             numeroRomano = decenas + unidades;
         } else if (numeroArabe < MIL) {
-            centenas = CENTENA.get(String.valueOf(getNumero(numeroArabe, CERO)));
+            centenas = CENTENA.get(String.valueOf(
+                    getNumero(numeroArabe, CERO)
+            ));
             decenas = DECENA.get(String.valueOf(getNumero(numeroArabe, UNO)));
             unidades = UNIDAD.get(String.valueOf(getNumero(numeroArabe, DOS)));
             numeroRomano = centenas + decenas + unidades;

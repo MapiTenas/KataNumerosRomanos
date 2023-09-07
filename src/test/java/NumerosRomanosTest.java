@@ -4,7 +4,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.ParameterizedTest;
 
 
-public class NumerosRomanosTest {
+public final class NumerosRomanosTest {
     @ParameterizedTest
     @CsvSource({
             "1, I",
