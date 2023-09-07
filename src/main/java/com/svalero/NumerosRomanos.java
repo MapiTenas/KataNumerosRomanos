@@ -52,7 +52,6 @@ public final class NumerosRomanos {
             "3", "MMM"
     );
 
-
     /** Variable para obtener la posición cero. */
     private static final int CERO = 0;
     /** Variable para obtener la posición uno. */

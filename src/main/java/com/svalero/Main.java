@@ -15,7 +15,8 @@ public final class Main {
                     + "a numeración romana:");
             numeroArabe = keyboard.nextInt();
             if (numeroArabe > 3000) {
-                System.out.println("Número erroneo.");
+                System.out.println("Número mayor de 3000."
+                        + "Cierre de programa.");
             } else {
                 System.out.println(NumerosRomanos.convertir(numeroArabe));
             }
